@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,289 +10,360 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 
   <style>
-    :root{
-      --bg:#ffffff;
-      --text:#111827;
-      --card:#f8fafc;
-      --muted:#6b7280;
-      --accent:#0d6efd;
-    }
-    body.dark-mode{
-      --bg:#0b1220;
-      --text:#e6eef8;
-      --card:#0f1724;
-      --muted:#9aa6b2;
-      --accent:#66a3ff;
+    :root {
+      --bg: #ffffff;
+      --text: #111827;
+      --card: #f8fafc;
+      --muted: #6b7280;
+      --accent: #0d6efd;
     }
 
-    body{
-      background:var(--bg);
-      color:var(--text);
+    body.dark-mode {
+      --bg: #0b1220;
+      --text: #e6eef8;
+      --card: #0f1724;
+      --muted: #9aa6b2;
+      --accent: #66a3ff;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
       font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
       transition: background 200ms ease, color 200ms ease;
     }
 
-    .card{
-      background:var(--card);
-      border:0;
-      box-shadow: 0 6px 20px rgba(2,6,23,0.06);
+    .card {
+      background: var(--card);
+      border: 0;
+      box-shadow: 0 6px 20px rgba(2, 6, 23, 0.06);
     }
-	
-	#img {
-	  width: 100%;
-	  object-fit: cover; /* options: cover | contain | fill | scale-down | none */
-	  border-radius: 10px; /* optional */
-	}
-    .muted{color:var(--muted)}
-    .accent{color:var(--accent)}
+
+    #img {
+      width: 100%;
+      object-fit: cover;
+      /* options: cover | contain | fill | scale-down | none */
+      border-radius: 10px;
+      /* optional */
+    }
+
+    .muted {
+      color: var(--muted)
+    }
+
+    .accent {
+      color: var(--accent)
+    }
 
     /* Hero */
-    .hero{padding:6rem 0}
-    .profile-pic{width:180px;height:180px;border-radius:50%;object-fit:cover;border:4px solid rgba(255,255,255,0.06); boarder: 1px solid black;}
+    .hero {
+      padding: 6rem 0
+    }
+
+    .profile-pic {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid rgba(255, 255, 255, 0.06);
+      boarder: 1px solid black;
+    }
 
     /* Skill badges */
-    .skill-badge{border-radius:999px;padding:.45rem .7rem;margin:.2rem;display:inline-block;background:rgba(13,110,253,0.08);color:var(--accent);font-weight:600}
+    .skill-badge {
+      border-radius: 999px;
+      padding: .45rem .7rem;
+      margin: .2rem;
+      display: inline-block;
+      background: rgba(13, 110, 253, 0.08);
+      color: var(--accent);
+      font-weight: 600
+    }
 
     /* Project image placeholder */
-    .placeholder-img{height:180px;background:linear-gradient(135deg, rgba(0,0,0,0.06), rgba(0,0,0,0.02));display:flex;align-items:center;justify-content:center;color:var(--muted);font-weight:600}
+    .placeholder-img {
+      height: 180px;
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.02));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-weight: 600
+    }
 
     /* Footer */
-    footer{padding:2.5rem 0}
+    footer {
+      padding: 2.5rem 0
+    }
 
     /* Responsive tweaks */
-    @media (max-width:576px){
-      .hero{padding:3rem 0}
-      .profile-pic{width:110px;height:110px}
+    @media (max-width:576px) {
+      .hero {
+        padding: 3rem 0
+      }
+
+      .profile-pic {
+        width: 110px;
+        height: 110px
+      }
     }
   </style>
 </head>
+
 <body>
 
-<nav class="navbar navbar-expand-lg py-3">
-  <div class="container">
-    <a class="navbar-brand fw-bold" href="#">MD SAYEED HASAN</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navMenu">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
-        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#projects">Portfolio Gallery</a></li>
-        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        <li class="nav-item ms-3">
-          <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" id="themeToggle">
-            <label class="form-check-label muted" for="themeToggle">Dark</label>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<header class="hero">
-  <div class="container">
-    <div class="row align-items-center g-4">
-      <div class="col-md-4 text-center text-md-start">
-        <img id="profile-img" src="https://media.licdn.com/dms/image/v2/D4E03AQFROXdzscRfqg/profile-displayphoto-scale_400_400/B4EZkOJM87GcAg-/0/1756878918712?e=1759968000&v=beta&t=bfloYJxUzKha8o7J8pjywqjkAjy4H-OGCO1jJpFjk0o" alt="Profile" class="profile-pic shadow-sm mb-3">
-      </div>
-      <div class="col-md-8">
-        <h1 class="display-6 fw-bold">Hi, I'm <span class="accent">MD SAYEED HASAN</span></h1>
-        <p class="lead muted">Final year <b> Civil Engineering student </b> • Aspiring water resources / geotech engineer • Building projects with code + CAD</p>
-        <div class="d-flex flex-wrap gap-2 mt-3">
-          <a class="btn btn-outline-primary" href="#projects"><i class="bi bi-folder2-open me-2"></i>Projects</a>
-          <a class="btn btn-primary" href="#contact"><i class="bi bi-envelope-paper me-2"></i>Contact</a>
-          <a class="btn btn-link muted" href="https://drive.google.com/file/d/1ffqwarWYCgjbNtu2NMrOLeKiquAkqYuM/view?usp=drivesdk">Download CV</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</header>
-
-<main class="pb-5">
-  <section id="about" class="py-4">
+  <nav class="navbar navbar-expand-lg py-3">
     <div class="container">
-      <div class="card p-4">
-        <div class="row g-3">
-          <div class="col-md-8">
-            <h3>About Me</h3>
-			<p class="muted">
-          I am a dedicated Civil Engineering student at <strong>Aliah University, Newtown Campus, Kolkata</strong>, 
-          currently in my final year. I have a <strong>Diploma in Civil Engineering</strong> from 
-          <strong>Aligarh Muslim University</strong>. My academic interests include water resources, 
-          structural analysis, and environmental engineering.
-        </p>
-        <p>
-          Recently, I completed an internship with the <strong>Public Health Engineering Department, Government of West Bengal</strong>, 
-          where I worked on water supply design, population forecasting, and tube well analysis.
-        </p>
-            <ul class="list-unstyled mb-0">
-              <li><strong>Institution:</strong> Aliah University, Newtown Campus, Kolkata</li>
-              <li><strong>Degree:</strong> B.Tech, Final Year</li>
-              <li><strong>Email:</strong> mshasan.br@gmail.com</li>
-            </ul>
-          </div>
-          <div class="col-md-4">
-            <h6>Quick Facts</h6>
-            <p class="mb-1 muted"><i class="bi bi-calendar-event me-2"></i>Graduation: 2026</p>
-            <p class="mb-1 muted"><i class="bi bi-geo-alt me-2"></i>Location: Kolkata, India</p>
-            <p class="mb-0 muted"><i class="bi bi-phone me-2"></i>Phone: +91 72504 74672</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+      <a class="navbar-brand fw-bold" href="#">MD SAYEED HASAN</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-  <section id="Portfolio Gallery" class="py-4">
-    <div class="container">
-      <div class="d-flex justify-content-between align-items-center mb-3">
-        <h3>Portfolio Gallery</h3>
-        <small class="muted">Selected academic highlights</small>
-      </div>
-
-      <div class="row g-3">
-        <div class="col-md-4">
-          <div class="card h-100 p-0 overflow-hidden">
-            <div class="placeholder-img">
-			<image id="img" src="https://media.licdn.com/dms/image/v2/D4E22AQHjdHp3rL4ocA/feedshare-shrink_1280/B4EZkFUrZHGwBA-/0/1756730944836?e=1759968000&v=beta&t=tfXnGCweu3JNBufbOY0o3eNqdpzRkRqpgZG8DL_LOyY"/>
-			</div>
-            <div class="card-body">
-              <h5 class="card-title">Side Visit RMC Plant</h5>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Portfolio Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item ms-3">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="themeToggle">
+              <label class="form-check-label muted" for="themeToggle">Dark</label>
             </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="card h-100 p-0 overflow-hidden">
-            <div class="placeholder-img">
-			<image id="img" src="https://media.licdn.com/dms/image/v2/D4E22AQEkH9Bn3rrtmw/feedshare-shrink_2048_1536/B4EZgZdmCxGUAo-/0/1752773860673?e=1759968000&v=beta&t=rQ4xir31sCb9ikmfCIOr1669KbceDKm4ozFtLqRU_N4"/>
-			</div>
-            <div class="card-body">
-              <h5 class="card-title">Soil Testing Dashboard</h5>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="card h-100 p-0 overflow-hidden">
-            <div class="placeholder-img"><image id="img" src="https://lh3.googleusercontent.com/fItN3js1G3bmkzaG6sDmAtrYOlJG4496c26tECqoVXOPWG5HCx6H51Vt6Vj-Hg91F58CKbD9TX2yuWqwxsZtNXmQDMYsGFh7x7B8_MsEmVSz9ZZ6GgnTBl_OKqryGr1u2JFww8kEhizvfmcy8KGEmRCTrnBwY7hqPsHgkUN2S4sVAvvktNpd0Q=w1280"/></div>
-            <div class="card-body">
-              <h5 class="card-title">OpenFOAM Prep Notes</h5>
-
-
-              
-              <p class="card-text muted">Notes and examples prepared for an OpenFOAM workshop — setup and basic tutorials.</p>
-              <a href="#" class="stretched-link">View notes</a>
-            </div>
-          </div>
-        </div>
+          </li>
+        </ul>
       </div>
-
     </div>
-  </section>
+  </nav>
 
-  <section id="skills" class="py-4">
+  <header class="hero">
     <div class="container">
-      <h3>Skills</h3>
-      <p class="muted">Tools and topics I'm comfortable with:</p>
-      <div class="mb-3">
-        <span class="skill-badge">AutoCAD</span>
-        <span class="skill-badge">QGIS</span>
-        <span class="skill-badge">Google Earth Engine</span>
-        <span class="skill-badge">WaterGEMS</span>
-        <span class="skill-badge">STAAD Pro</span>
-        <span class="skill-badge">Microsoft Office</span>
-      </div>
-
-      <div class="row g-3">
-        <div class="col-md-6">
-          <div class="card p-3">
-            <h6>Education</h6>
-            <p class="muted mb-0">B.Tech in Civil Engineering — Aliah University, Govt. of W.B, Kolkata</p>
-			<p class="muted mb-0">Diploma in Civil Engineering With Honours — Aligarh Muslim University, Aligarh, India</p>
-			<p class="muted mb-0">Matriculation — Bihar School Examination Board, Patna, India</p>
-			
-          </div>
+      <div class="row align-items-center g-4">
+        <div class="col-md-4 text-center text-md-start">
+          <img id="profile-img"
+            src="https://media.licdn.com/dms/image/v2/D4E03AQFROXdzscRfqg/profile-displayphoto-scale_400_400/B4EZkOJM87GcAg-/0/1756878918712?e=1759968000&v=beta&t=bfloYJxUzKha8o7J8pjywqjkAjy4H-OGCO1jJpFjk0o"
+            alt="Profile" class="profile-pic shadow-sm mb-3">
         </div>
-        <div class="col-md-6">
-          <div class="card p-3">
-            <h6>Work / Internship</h6>
-            <p class="muted mb-0">Summer Internship — Public Health Engineering Dept, West Bengal (water supply design)</p>
+        <div class="col-md-8">
+          <h1 class="display-6 fw-bold">Hi, I'm <span class="accent">MD SAYEED HASAN</span></h1>
+          <p class="lead muted">Final year <b> Civil Engineering student </b> • Aspiring water resources / geotech
+            engineer • Building projects with code + CAD</p>
+          <div class="d-flex flex-wrap gap-2 mt-3">
+            <a class="btn btn-outline-primary" href="#projects"><i class="bi bi-folder2-open me-2"></i>Projects</a>
+            <a class="btn btn-primary" href="#contact"><i class="bi bi-envelope-paper me-2"></i>Contact</a>
+            <a class="btn btn-link muted"
+              href="https://drive.google.com/file/d/1ffqwarWYCgjbNtu2NMrOLeKiquAkqYuM/view?usp=drivesdk">Download CV</a>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </header>
 
-  <section id="contact" class="py-4">
-    <div class="container">
-      <div class="card p-4">
-        <h3>Contact</h3>
-        <p class="muted">Want to collaborate or have a question? Send a message.</p>
-        <form>
+  <main class="pb-5">
+    <section id="about" class="py-4">
+      <div class="container">
+        <div class="card p-4">
           <div class="row g-3">
-            <div class="col-md-6">
-              <input class="form-control" placeholder="Name" required>
+            <div class="col-md-8">
+              <h3>About Me</h3>
+              <p class="muted">
+                I am a dedicated Civil Engineering student at <strong>Aliah University, Newtown Campus,
+                  Kolkata</strong>,
+                currently in my final year. I have a <strong>Diploma in Civil Engineering</strong> from
+                <strong>Aligarh Muslim University</strong>. My academic interests include water resources,
+                structural analysis, and environmental engineering.
+              </p>
+              <p>
+                Recently, I completed an internship with the <strong>Public Health Engineering Department, Government of
+                  West Bengal</strong>,
+                where I worked on water supply design, population forecasting, and tube well analysis.
+              </p>
+              <ul class="list-unstyled mb-0">
+                <li><strong>Institution:</strong> Aliah University, Newtown Campus, Kolkata</li>
+                <li><strong>Degree:</strong> B.Tech, Final Year</li>
+                <li><strong>Email:</strong> mshasan.br@gmail.com</li>
+              </ul>
             </div>
-            <div class="col-md-6">
-              <input class="form-control" placeholder="Email" type="email" required>
-            </div>
-            <div class="col-12">
-              <input class="form-control" placeholder="Subject">
-            </div>
-            <div class="col-12">
-              <textarea class="form-control" rows="4" placeholder="Message"></textarea>
-            </div>
-            <div class="col-12 text-end">
-              <button class="btn btn-primary">Send Message</button>
+            <div class="col-md-4">
+              <h6>Quick Facts</h6>
+              <p class="mb-1 muted"><i class="bi bi-calendar-event me-2"></i>Graduation: 2026</p>
+              <p class="mb-1 muted"><i class="bi bi-geo-alt me-2"></i>Location: Kolkata, India</p>
+              <p class="mb-0 muted"><i class="bi bi-phone me-2"></i>Phone: +91 72504 74672</p>
             </div>
           </div>
-        </form>
+        </div>
       </div>
+    </section>
+
+    <section id="Portfolio Gallery" class="py-4">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h3>Portfolio Gallery</h3>
+          <small class="muted">Selected academic highlights</small>
+        </div>
+
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="card h-100 p-0 overflow-hidden">
+              <div class="placeholder-img">
+                <image id="img"
+                  src="https://media.licdn.com/dms/image/v2/D4E22AQHjdHp3rL4ocA/feedshare-shrink_1280/B4EZkFUrZHGwBA-/0/1756730944836?e=1759968000&v=beta&t=tfXnGCweu3JNBufbOY0o3eNqdpzRkRqpgZG8DL_LOyY" />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Side Visit RMC Plant</h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card h-100 p-0 overflow-hidden">
+              <div class="placeholder-img">
+                <image id="img"
+                  src="https://media.licdn.com/dms/image/v2/D4E22AQEkH9Bn3rrtmw/feedshare-shrink_2048_1536/B4EZgZdmCxGUAo-/0/1752773860673?e=1759968000&v=beta&t=rQ4xir31sCb9ikmfCIOr1669KbceDKm4ozFtLqRU_N4" />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Soil Testing Dashboard</h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card h-100 p-0 overflow-hidden">
+              <div class="placeholder-img">
+                <image id="img"
+                  src="https://lh3.googleusercontent.com/fItN3js1G3bmkzaG6sDmAtrYOlJG4496c26tECqoVXOPWG5HCx6H51Vt6Vj-Hg91F58CKbD9TX2yuWqwxsZtNXmQDMYsGFh7x7B8_MsEmVSz9ZZ6GgnTBl_OKqryGr1u2JFww8kEhizvfmcy8KGEmRCTrnBwY7hqPsHgkUN2S4sVAvvktNpd0Q=w1280" />
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">OpenFOAM Prep Notes</h5>
+
+
+
+                <p class="card-text muted">Notes and examples prepared for an OpenFOAM workshop — setup and basic
+                  tutorials.</p>
+                <a href="#" class="stretched-link">View notes</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="skills" class="py-4">
+      <div class="container">
+        <h3>Skills</h3>
+        <p class="muted">Tools and topics I'm comfortable with:</p>
+        <div class="mb-3">
+          <span class="skill-badge">AutoCAD</span>
+          <span class="skill-badge">QGIS</span>
+          <span class="skill-badge">Google Earth Engine</span>
+          <span class="skill-badge">WaterGEMS</span>
+          <span class="skill-badge">STAAD Pro</span>
+          <span class="skill-badge">Microsoft Office</span>
+        </div>
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card p-3">
+              <h6>Education</h6>
+              <p class="muted mb-0">B.Tech in Civil Engineering — Aliah University, Govt. of W.B, Kolkata</p>
+              <p class="muted mb-0">Diploma in Civil Engineering With Honours — Aligarh Muslim University, Aligarh,
+                India</p>
+              <p class="muted mb-0">Matriculation — Bihar School Examination Board, Patna, India</p>
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card p-3">
+              <h6>Work / Internship</h6>
+              <p class="muted mb-0">Summer Internship — Public Health Engineering Dept, West Bengal (water supply
+                design)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-4">
+      <div class="container">
+        <div class="card p-4">
+          <h3>Contact</h3>
+          <p class="muted">Want to collaborate or have a question? Send a message.</p>
+          <form>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <input class="form-control" placeholder="Name" required>
+              </div>
+              <div class="col-md-6">
+                <input class="form-control" placeholder="Email" type="email" required>
+              </div>
+              <div class="col-12">
+                <input class="form-control" placeholder="Subject">
+              </div>
+              <div class="col-12">
+                <textarea class="form-control" rows="4" placeholder="Message"></textarea>
+              </div>
+              <div class="col-12 text-end">
+                <button class="btn btn-primary">Send Message</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div>
+          <div>
+            <form action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="cf9039f6-c8be-4f83-8525-0ae76fcb053f"
+                value="cf9039f6-c8be-4f83-8525-0ae76fcb053f">
+              <input type="text" name="name" required>
+              <input type="email" name="email" required>
+              <textarea name="message" required></textarea>
+              <input type="hidden" name="redirect" value="https://web3forms.com/success">
+              <button type="submit">Submit Form</button>
+            </form>
+          </div>
+        </div>
+    </section>
+  </main>
+
+  <footer class="text-center muted border-top">
+    <div class="container">
+      <p class="mb-1"> Student Portfolio</p>
+      <p class="small muted mb-0">© 2025 MD SAYEED HASAN — All Rights Reserved
+      </p>
     </div>
-  </section>
-</main>
+  </footer>
 
-<footer class="text-center muted border-top">
-  <div class="container">
-    <p class="mb-1"> Student Portfolio</p>
-    <p class="small muted mb-0">© 2025 MD SAYEED HASAN — All Rights Reserved
- </p>
-  </div>
-</footer>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Theme toggle with localStorage
+    const toggle = document.getElementById('themeToggle');
+    const root = document.documentElement;
+    const body = document.body;
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-  // Theme toggle with localStorage
-  const toggle = document.getElementById('themeToggle');
-  const root = document.documentElement;
-  const body = document.body;
-
-  function applyTheme(t){
-    if(t === 'dark'){
-      body.classList.add('dark-mode');
-      toggle.checked = true;
-    } else {
-      body.classList.remove('dark-mode');
-      toggle.checked = false;
+    function applyTheme(t) {
+      if (t === 'dark') {
+        body.classList.add('dark-mode');
+        toggle.checked = true;
+      } else {
+        body.classList.remove('dark-mode');
+        toggle.checked = false;
+      }
     }
-  }
 
-  // Read saved theme
-  const saved = localStorage.getItem('theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-  applyTheme(saved);
+    // Read saved theme
+    const saved = localStorage.getItem('theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    applyTheme(saved);
 
-  toggle.addEventListener('change', ()=>{
-    const t = toggle.checked ? 'dark' : 'light';
-    applyTheme(t);
-    localStorage.setItem('theme', t);
-  });
+    toggle.addEventListener('change', () => {
+      const t = toggle.checked ? 'dark' : 'light';
+      applyTheme(t);
+      localStorage.setItem('theme', t);
+    });
 
-  // set year
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+    // set year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
+
 </html>
